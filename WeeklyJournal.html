@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Desmond's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
+    <style>
+        
+        header {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(51, 51, 51, 0.5); 
+            border: 2px solid #333; 
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .website-name{
+          font-size: 40px;
+          font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 20px; 
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        
+        nav li:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<style>
+  body {
+    background-image: url('Photos/BigBackgroundBigture.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+}  
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+        </div>
+        <div class="website-name"><i>Desmond's Portfolio</i></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#">Portfolio Pages</a>
+                    <div class="dropdown-content">
+                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
+                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
+                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
+                    </div>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="color: white;">
+      Weekly Journal
+    </h1>
+  <p style="color: white;">
+    <b>Week one, Sep 8 2023</b> <br>
+    This week we watched <i>The Imitation Game</i> and started work on our RST
+  </p>
+  <p style="color: white;">
+    <b>Week two, Sep 15 2023</b> <br>
+    This week I learned about how to use variables in calculations as well as input and print statments. Relevent projects are 
+    <a href="ClassProjects.html" style="color: blue;"> <i>Unit 1 - Exercises unit</i> </a>
+  </p>
+  <p style="color: white;">
+    <b>Week three, Sep 22 2023</b> <br>
+    This week we Worked on some python but mostly we were working on HOC presentation. See  <a href="ClassProjects.html" style="color: blue;"> <i>History of Computers</i> </a>
+  </p>
+  <p style="color: white;">
+    <b>Week four, Sep 29 2023</b> <br>
+    This week we presenter our HOC projects and we worked on CScircles. See 
+    <a href="ClassProjects.html" style="color: blue;"> <i>History of Computers</i> </a> and <a href="UsefullBookmarks.html" style="color: blue;"> <i>CSCircles</i> </a>
+  </p>
+  <p style="color: white;">
+    <b>Week five, Oct 6 2023</b> <br>
+    This week we started unit 2, IF statments, we had a Nokia presentation and friday was a PD day. See  <a href="ClassProjects.html" style="color: blue;"> <i>Unit 2</i> </a>
+  </p>
+  <p style="color: white;">
+    <b>Week six, Oct 13 2023</b> <br>
+    This week we Worked on the unit 2 exercies, We had our first day of CSE, where we will be working with Rasbery Pie's and we had our unit 2 quiz. See  <a href="ClassProjects.html" style="color: blue;"> <i>Unit 2</i> </a>
+  </body>
+</html>

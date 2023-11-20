@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Desmond's Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
+    <style>
+        header {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(51, 51, 51, 0.5); 
+            border: 2px solid #333; 
+            color: #fff; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .website-name{
+          font-size: 40px;
+          font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<style>
+  body {
+    background-image: url('Photos/BigBackgroundBigture.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}  
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+        </div>
+        <div class="website-name"><i>Desmond's Portfolio</i></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#">Portfolio Pages</a>
+                    <div class="dropdown-content">
+                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
+                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
+                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
+                    </div>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="color: white;">
+      Class Projects
+    </h1>
+    <p style="color: white;"><b>Python:</b></p>
+  <ul style="color: white;">
+      <li><b>Unit 1 - Exercises Unit 1:</b> a compilation of mini projects all about printing and variables.</li>
+      <li><b>Unit 1 - Budget:</b> You are tasked with creating a budget and finding the pourcentage of your money that will be used for each seperate category.</li>
+      <li><b>Unit 2 - Practice (part 1):</b> a compilation of mini projects all about IF and strings</li>
+      <li><b>Unit 2 - Practice (part 2):</b> a continuation of part one but with slighltly longer and more complicated projects</li>
+    </ul>
+  <h3 style="color: white;"><b>html:</b></h3>
+  <ul style="color: white;">
+    <li><b>RST:</b> Portfolio</li>
+  </ul>
+  <h3 style="color: white;"><b>In Class Projects</b></h3>
+  <ul style="color: white;">
+    <li><b>History of Computers</b> You are tasked with finding and researching an influencial person on the world of computers and then presenting it</li>
+  </ul>
+    
+  </body>
+</html>
