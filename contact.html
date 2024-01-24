@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Desmond's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
     <style>
-        header {
+        body {
+            background-image: url('Photos/backgroundBlack.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
-            padding: 0;
-            background-color: rgba(51, 51, 51, 0.5);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
             border: 2px solid #333;
             color: #fff;
             display: flex;
@@ -24,16 +31,16 @@
             font-weight: bold;
         }
 
-        .website-name{
-          font-size: 40px;
-          font-weight: bold;
+        .website-name {
+            font-size: 40px;
+            font-weight: bold;
         }
 
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; 
+            display: flex;
         }
 
         nav li {
@@ -44,10 +51,28 @@
         nav a {
             text-decoration: none;
             color: #fff;
+            position: relative;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #008080; /* Teal color */
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        nav li:hover a::after {
+            width: 100%;
+            left: 0;
         }
 
         .dropdown-content {
@@ -59,58 +84,68 @@
         }
 
         .dropdown-content a {
-            color: #fff;
+            color: #fff; /* White text */
             padding: 10px;
             text-decoration: none;
             display: block;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        
+        .dropdown-content a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #008080; /* Teal color on hover */
+        }
+
         nav li:hover .dropdown-content {
             display: block;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-        }
-
         header2 {
             text-align: center;
-            color: white;
             margin-bottom: 20px;
         }
 
         section {
             max-width: 600px;
-            color: white;
-            margin: 0 auto;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            border-radius: 10px;
         }
 
-        form {
-            margin-top: 20px;
-            color: white;
+        p, form, label {
+            color: white; /* Changed text color */
         }
 
-        label {
-            display: block;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        input,
-        textarea {
+        input, textarea {
             width: 100%;
-            color: white;
+            color: black; /* Changed text box color to black */
             padding: 8px;
             margin-bottom: 16px;
             box-sizing: border-box;
+            background-color: #fff; /* Changed background color to white */
         }
 
         button {
             background-color: #4CAF50;
-            color: white;
+            color: white; /* Changed text color */
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -120,31 +155,30 @@
         button:hover {
             background-color: #45a049;
         }
+
+        button:disabled {
+            cursor: not-allowed; /* Disabled cursor */
+            background-color: #cccccc;
+        }
+
     </style>
 </head>
-<style>
-  body {
-    background-image: url('Photos/BigBackgroundBigture.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; 
-}  
-</style>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50" alt="Logo"></a>
         </div>
-        <div class="website-name"><i>Desmond's Portfolio</i></div>
+        <div class="website-name">Desmond's Portfolio</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
+                <li class="portfolio-section">
                     <a href="#">Portfolio Pages</a>
                     <div class="dropdown-content">
-                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
-                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
-                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
+                        <a href="UsefulBookmarks.html">Useful Bookmarks</a>
+                        <a href="ClassProjects.html">Class Projects</a>
+                        <a href="WeeklyJournal.html">Weekly Journal</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
@@ -168,8 +202,14 @@
             <label for="message">Your Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="button" onclick="outOfService()">Submit</button>
         </form>
     </section>
+
+    <script>
+        function outOfService() {
+            alert("Form is currently out of service");
+        }
+    </script>
 </body>
 </html>
