@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Desmond's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
     <style>
-        
-        header {
+        body {
+            background-image: url('Photos/backgroundBlack.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
-            padding: 0;
-            background-color: rgba(51, 51, 51, 0.5); 
-            border: 2px solid #333; 
-            color: #fff; 
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            border: 2px solid #333;
+            color: #fff;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,9 +31,9 @@
             font-weight: bold;
         }
 
-        .website-name{
-          font-size: 40px;
-          font-weight: bold;
+        .website-name {
+            font-size: 40px;
+            font-weight: bold;
         }
 
         nav ul {
@@ -38,17 +44,35 @@
         }
 
         nav li {
-            margin: 0 20px; 
+            margin: 0 20px;
             position: relative;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
+            position: relative;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #008080; /* Teal color */
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        nav li:hover a::after {
+            width: 100%;
+            left: 0;
         }
 
         .dropdown-content {
@@ -60,119 +84,233 @@
         }
 
         .dropdown-content a {
-            color: #fff;
+            color: #fff; /* White text */
             padding: 10px;
             text-decoration: none;
             display: block;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        
+        .dropdown-content a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #008080; /* Teal color on hover */
+        }
+
         nav li:hover .dropdown-content {
             display: block;
         }
+
+        header2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            border-radius: 10px;
+        }
+
+        h1, h2, p {
+            color: white;
+        }
+
+        a {
+            color: #008080; /* Teal color */
+            text-decoration: underline;
+        }
+
+        /* Additional styling for journal entries */
+        section p {
+            margin-bottom: 20px;
+        }
+
+        .journal-entry-button {
+            background-color: #008080; /* Teal color */
+            color: white;
+            border: none;
+            padding: 15px; /* Increased padding */
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+            width: 100%; /* Full-width button */
+            display: block;
+            margin-bottom: 20px; /* Spacing between buttons */
+            position: relative;
+        }
+
+        .journal-entry-content {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background-color: rgba(0, 128, 128, 0.8); /* Teal color with transparency */
+            z-index: 1;
+        }
+
+        .journal-entry-button:hover .journal-entry-content {
+            display: block;
+        }
+
+        .journal-entry-button:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
-<style>
-  body {
-    background-image: url('Photos/BigBackgroundBigture.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; 
-}  
-</style>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50" alt="Logo"></a>
         </div>
         <div class="website-name"><i>Desmond's Portfolio</i></div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
+                <li class="portfolio-section">
                     <a href="#">Portfolio Pages</a>
                     <div class="dropdown-content">
-                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
-                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
-                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
+                        <a href="UsefulBookmarks.html">Useful Bookmarks</a>
+                        <a href="ClassProjects.html">Class Projects</a>
+                        <a href="WeeklyJournal.html">Weekly Journal</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <h1 style="color: white;">
-      Weekly Journal
-    </h1>
-  <p style="color: white;">
-    <b>Week one, Sep 8 2023</b> <br>
-    This week we watched <i>The Imitation Game</i> and started work on our RST
-  </p>
-  <p style="color: white;">
-    <b>Week two, Sep 15 2023</b> <br>
-    This week I learned about how to use variables in calculations as well as input and print statments. Relevent projects are 
-    <a href="ClassProjects.html" style="color: blue;"> <i>Unit 1 - Exercises unit</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week three, Sep 22 2023</b> <br>
-    This week we Worked on some python but mostly we were working on HOC presentation. See  <a href="ClassProjects.html" style="color: blue;"> <i>History of Computers</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week four, Sep 29 2023</b> <br>
-    This week we presenter our HOC projects and we worked on CScircles. See 
-    <a href="ClassProjects.html" style="color: blue;"> <i>History of Computers</i> </a> and <a href="UsefullBookmarks.html" style="color: blue;"> <i>CSCircles</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week five, Oct 6 2023</b> <br>
-    This week we started unit 2, IF statments, we had a Nokia presentation and friday was a PD day. See  <a href="ClassProjects.html" style="color: blue;"> <i>Unit 2</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week six, Oct 13 2023</b> <br>
-    This week we Worked on the unit 2 exercies, We had our first day of CSE, where we will be working with Rasbery Pie's and we had our unit 2 quiz. See  <a href="ClassProjects.html" style="color: blue;"> <i>Unit 2</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week seven, Oct 20 2023</b> <br>
-    This week we got to play minecraft on monday, had our second day of CSE, and then started and finnished unit 1 of CMU See  <a href="UsefullBookmarks.html" style="color: blue;"> <i>CMU</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week eight, Oct 27 2023</b> <br>
-    This week we did our <a href="ClassProjects.html" style="color: blue;"> <i>Languages of the World</i> </a> project had our third day of CSE and did our <a href="ClassProjects.html" style="color: blue;"> <i>Careers in IT</i> </a> project.
-  </p>
-  <p style="color: white;">
-    <b>Week nine, Nov 3 2023</b> <br>
-    This week we first worked on <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, we had our fourth day of CSE and worked on <a href="ClassProjects.html" style="color: blue;"> <i>Unit 3 - Lists and Loops</i> </a>
-  </p>
-  <p style="color: white;">
-    <b>Week ten, Nov 10 2023</b> <br>
-    This week we worked on a mix of both <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, and <a href="ClassProjects.html" style="color: blue;"> <i>Unit 3 - Lists and Loops</i> </a> we also had our fith day of CSE
-  </p> 
-  <p style="color: white;">
-    <b>Week eleven, Nov 17 2023</b> <br>
-    This week we worked mostly on <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, and we also had our sixth day of CSE and a test.
-  </p>  
-  <p style="color: white;">
-    <b>Week twelve, Nov 24 2023</b> <br>
-    This was another week of mostly working on <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, and, of course, we also had our seventh day of CSE
-  </p> 
-  <p style="color: white;">
-    <b>Week thirteen, Dec 1 2023</b> <br>
-    This week we on <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, but also started a new program called <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i> </a> we also had our eighth day of CSE
-  </p>
-  <p style="color: white;">
-    <b>Week fourteen, Dec 8 2023</b> <br>
-    This week we worked on a mix of both <a href="ClassProjects.html" style="color: blue;"> <i>CMU</i></a>, and <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i> </a> we also had our ninth day of CSE
-  </p>  
-  <p style="color: white;">
-    <b>Week fifteen, Dec 15 2023</b> <br>
-    This week we worked only on <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i> </a> we also had our tenth day of cse which means that next week will be our last day
-  </p> 
-  <p style="color: white;">
-    <b>Week sixteen, Dec 22 2023</b> <br>
-    This week we worked mostly on <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i></a>, and a little bit on our <a href="ClassProjects.html" style="color: blue;"> <i>RST</i> </a> we also had our final day of CSE where we had a special christmas challenge and got a rubber duck
-  </p> 
-  <p style="color: white;">
-    <b>Week seventeen, January 12 2024</b> <br>
-    This week will be my last entry, we were mostly focused on setting up VScode for our computers so that we could use them for our RST
-  </p> 
+    <header2>
+        <h1>Weekly Journal</h1>
+    </header2>
+
+    <section>
+        <button class="journal-entry-button"><b>Week one, Sep 8, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we watched <i>The Imitation Game</i> and started work on our RST</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week two, Sep 15, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week I learned about how to use variables in calculations as well as input and print statements. Relevant projects are <a href="ClassProjects.html" style="color: blue;">Unit 1 - Exercises unit</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week three, Sep 22, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked on some python but mostly we were working on HOC presentation. See <a href="ClassProjects.html" style="color: blue;">History of Computers</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week four, Sep 29, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we presenter our HOC projects and we worked on CScircles. See <a href="ClassProjects.html" style="color: blue;">History of Computers</a> and <a href="UsefulBookmarks.html" style="color: blue;">CSCircles</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week five, Oct 6, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we started unit 2, IF statements, we had a Nokia presentation and Friday was a PD day. See <a href="ClassProjects.html" style="color: blue;">Unit 2</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week six, Oct 13, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked on the unit 2 exercises, We had our first day of CSE, where we will be working with Raspberry Pi's and we had our unit 2 quiz. See <a href="ClassProjects.html" style="color: blue;">Unit 2</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week seven, Oct 20, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we got to play Minecraft on Monday, had our second day of CSE, and then started and finished unit 1 of CMU. See <a href="UsefulBookmarks.html" style="color: blue;">CMU</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week eight, Oct 27, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we did our <a href="ClassProjects.html" style="color: blue;">Languages of the World</a> project, had our third day of CSE, and did our <a href="ClassProjects.html" style="color: blue;">Careers in IT</a> project.</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week nine, Nov 3, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we first worked on <a href="ClassProjects.html" style="color: blue;">CMU</a>, had our fourth day of CSE, and worked on <a href="ClassProjects.html" style="color: blue;">Unit 3 - Lists and Loops</a></p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week ten, Nov 10, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked on a mix of both <a href="ClassProjects.html" style="color: blue;">CMU</a> and <a href="ClassProjects.html" style="color: blue;">Unit 3 - Lists and Loops</a>. We also had our fifth day of CSE.</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week eleven, Nov 17, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked mostly on <a href="ClassProjects.html" style="color: blue;">CMU</a>, and we also had our sixth day of CSE and a test.</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week twelve, Nov 24, 2023</b>
+            <div class="journal-entry-content">
+                <p>This was another week of mostly working on <a href="ClassProjects.html" style="color: blue;">CMU</a>, and, of course, we also had our seventh day of CSE.</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week thirteen, Dec 1, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked on <a href="ClassProjects.html" style="color: blue;">CMU</a>, but also started a new program called <a href="ClassProjects.html" style="color: blue;">CodeHS</a>. We also had our eighth day of CSE.</p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week fourteen, Dec 8, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked on a mix of both <a href="ClassProjects.html" style="color: blue;">CMU</a>, and <a href="ClassProjects.html" style="color: blue;">CodeHS</a>. We also had our ninth day of CSE.
+                </p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week fifteen, Dec 15, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked only on <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i> </a> we also had our tenth day of cse which means that next week will be our last day
+                </p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week sixteen, Dec 22, 2023</b>
+            <div class="journal-entry-content">
+                <p>This week we worked mostly on <a href="ClassProjects.html" style="color: blue;"> <i>CodeHS</i></a>, and a little bit on our <a href="ClassProjects.html" style="color: blue;"> <i>RST</i> </a> we also had our final day of CSE where we had a special christmas challenge and got a rubber duck
+                </p>
+            </div>
+        </button>
+
+        <button class="journal-entry-button"><b>Week seventeen, Jan 12, 2024</b>
+            <div class="journal-entry-content">
+                <p>This week will be my last entry, we were mostly focused on setting up VScode for our computers so that we could use them for our RST
+                </p>
+            </div>
+        </button>
+
+      </section>
   </body>
-</html>
+  </html>
