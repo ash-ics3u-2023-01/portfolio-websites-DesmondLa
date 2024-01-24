@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Desmond's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
     <style>
-        header {
+        body {
+            background-image: url('Photos/backgroundBlack.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
-            padding: 0;
-            background-color: rgba(51, 51, 51, 0.5);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
             border: 2px solid #333;
             color: #fff;
             display: flex;
@@ -24,16 +31,16 @@
             font-weight: bold;
         }
 
-        .website-name{
-          font-size: 40px;
-          font-weight: bold;
+        .website-name {
+            font-size: 40px;
+            font-weight: bold;
         }
 
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; 
+            display: flex;
         }
 
         nav li {
@@ -44,10 +51,28 @@
         nav a {
             text-decoration: none;
             color: #fff;
+            position: relative;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #008080; /* Teal color */
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        nav li:hover a::after {
+            width: 100%;
+            left: 0;
         }
 
         .dropdown-content {
@@ -59,22 +84,37 @@
         }
 
         .dropdown-content a {
-            color: #fff;
+            color: #fff; /* White text */
             padding: 10px;
             text-decoration: none;
             display: block;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        
+        .dropdown-content a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #008080; /* Teal color on hover */
+        }
+
         nav li:hover .dropdown-content {
             display: block;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            color: #fff;
         }
 
         header2 {
@@ -85,34 +125,43 @@
 
         section {
             max-width: 600px;
-            margin: 0 auto;
-            color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            border-radius: 10px;
+        }
+
+        h1, h2, p {
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
-<style>
-  body {
-    background-image: url('Photos/BigBackgroundBigture.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; 
-}  
-</style>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50" alt="Logo"></a>
         </div>
-        <div class="website-name"><i>Desmond's Portfolio</i></div>
+        <div class="website-name">Desmond's Portfolio</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
+                <li class="portfolio-section">
                     <a href="#">Portfolio Pages</a>
                     <div class="dropdown-content">
-                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
-                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
-                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
+                        <a href="UsefulBookmarks.html">Useful Bookmarks</a>
+                        <a href="ClassProjects.html">Class Projects</a>
+                        <a href="WeeklyJournal.html">Weekly Journal</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
@@ -125,13 +174,13 @@
 
     <section>
         <h2>My Story</h2>
-        <p>I was born 2008 april 22 in vancouver B.C. My family later moved to ottawa which is where we live now, I have two sisters, one older, one younger. My name is Desmond which is gaeilic for munster, a place in ireland which is where my moms side of the family is from while my dads side is part french part irish.</p>
+        <p>I was born 2008 April 22 in Vancouver, B.C. My family later moved to Ottawa which is where we live now. I have two sisters, one older, one younger. My name is Desmond, which is Gaelic for Munster, a place in Ireland where my mom's side of the family is from while my dad's side is part French, part Irish.</p>
 
         <h2>This Websites</h2>
-        <p>This websites mission is to provide you, the user with information about me and the 11th grade class ics3u that I am currently taking.</p>
+        <p>This website's mission is to provide you, the user, with information about me and the 11th-grade class ICS3U that I am currently taking.</p>
 
-        <h2>Contributers</h2>
-        <p>Although I am extremely good at coding and amazing at getting ideas, sometimes those ideas need a little push. here is a list of people who helped give thos pushes:</p>
+        <h2>Contributors</h2>
+        <p>Although I am extremely good at coding and amazing at getting ideas, sometimes those ideas need a little push. Here is a list of people who helped give those pushes:</p>
         <ul>
             <li>Mr. Jamieson</li>
             <li>Vlad Calin</li>
