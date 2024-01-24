@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Desmond's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="Photos/Realpeppapig.png">
     <style>
-        header {
+        body {
+            background-image: url('Photos/backgroundBlack.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
-            padding: 0;
-            background-color: rgba(51, 51, 51, 0.5);
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
             border: 2px solid #333;
             color: #fff;
             display: flex;
@@ -24,16 +30,16 @@
             font-weight: bold;
         }
 
-        .website-name{
-          font-size: 40px;
-          font-weight: bold;
+        .website-name {
+            font-size: 40px;
+            font-weight: bold;
         }
 
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; 
+            display: flex;
         }
 
         nav li {
@@ -44,10 +50,28 @@
         nav a {
             text-decoration: none;
             color: #fff;
+            position: relative;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: #008080; /* Teal color */
+        }
+
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        nav li:hover a::after {
+            width: 100%;
+            left: 0;
         }
 
         .dropdown-content {
@@ -59,48 +83,83 @@
         }
 
         .dropdown-content a {
-            color: #fff;
+            color: #fff; /* White text */
             padding: 10px;
             text-decoration: none;
             display: block;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        
+        .dropdown-content a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #008080; /* Teal color */
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #008080; /* Teal color on hover */
+        }
+
         nav li:hover .dropdown-content {
             display: block;
         }
 
-
         section {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            border-radius: 10px;
             color: #fff;
+        }
+
+        h1, p {
+            color: white;
+        }
+
+        /* Specific styling for Portfolio Pages section */
+        .portfolio-section .dropdown-content a {
+            color: #fff; /* Teal color */
+        }
+
+        .portfolio-section .dropdown-content a::after {
+            background-color: #008080; /* Teal color */
+        }
+
+        .portfolio-section .dropdown-content a:hover::after {
+            width: 100%;
+            left: 0;
         }
     </style>
 </head>
-<style>
-  body {
-    background-image: url('Photos/BigBackgroundBigture.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; 
-}  
-</style>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50"></a>
+            <a href="index.html"><img src="Photos/Realpeppapig.png" width="50" height="50" alt="Logo"></a>
         </div>
-        <div class="website-name"><i>Desmond's Portfolio</i></div>
+        <div class="website-name">Desmond's Portfolio</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li>
+                <li class="portfolio-section">
                     <a href="#">Portfolio Pages</a>
                     <div class="dropdown-content">
-                        <a href="UsefullBookmarks.html" style="color: white;"> Usefull Bookmarks </a>
-                        <a href="ClassProjects.html" style="color: white;"> Class Projects </a>
-                        <a href="WeeklyJournal.html" style="color: white;"> Weekly Journal </a>
+                        <a href="UsefulBookmarks.html">Useful Bookmarks</a>
+                        <a href="ClassProjects.html">Class Projects</a>
+                        <a href="WeeklyJournal.html">Weekly Journal</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
@@ -108,8 +167,8 @@
         </nav>
     </header>
     <section>
-        <h1 style="color: white;"> Welcome!</h1> 
-        <p style="color: white;">Hello and welcome to Desmonds portfolio, the only place to find out the best information about Desmond in ics3u. For further information please visite any of the portfolio pages, about, or contact.</p>
+        <h1>Welcome!</h1> 
+        <p>Hello and welcome to Desmond's portfolio, the only place to find out the best information about Desmond in ICS3U. For further information, please visit any of the portfolio pages, about, or contact.</p>
     </section>
 </body>
 </html>
